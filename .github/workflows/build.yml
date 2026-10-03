@@ -1,0 +1,32 @@
+# Verifica se os projetos compilam para web a cada push ou pull request
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-web:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projeto: [atividade-1, trabalho-final]
+    defaults:
+      run:
+        working-directory: ${{ matrix.projeto }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: ${{ matrix.projeto }}/package-lock.json
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Gerar build web
+        run: npx expo export --platform web

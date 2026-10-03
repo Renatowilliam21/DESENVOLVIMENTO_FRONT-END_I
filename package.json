@@ -1,0 +1,18 @@
+{
+  "name": "desenvolvimento-front-end-i",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Atividades da disciplina de Desenvolvimento Front-end (React Native) da Pós em Desenvolvimento Full Stack - IF Sudeste MG",
+  "engines": {
+    "node": ">=20.19.4"
+  },
+  "scripts": {
+    "verificar": "node scripts/setup.js --verificar",
+    "setup": "node scripts/setup.js",
+    "atv1": "npm --prefix atividade-1 run web",
+    "atv1:celular": "npm --prefix atividade-1 start",
+    "final": "npm --prefix trabalho-final run web",
+    "final:celular": "npm --prefix trabalho-final start",
+    "entrega": "node scripts/empacotar.js"
+  }
+}

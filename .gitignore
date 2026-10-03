@@ -1,0 +1,44 @@
+# Dependências (nunca subir)
+node_modules/
+
+# Expo / build
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Pacotes de entrega gerados pelo script
+entregas/
+
+# Nativo (gerado pelo expo prebuild)
+ios/
+android/
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Logs e sistema
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+.DS_Store
+__MACOSX/
+Thumbs.db
+
+# Ambiente
+.env
+.env*.local
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Materiais das aulas e enunciados do professor (não publicar)
+*.pdf
+*.zip
+docs/enunciados/
